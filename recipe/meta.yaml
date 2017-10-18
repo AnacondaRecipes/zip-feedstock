@@ -8,11 +8,17 @@ package:
 source:
   url: ftp://ftp.info-zip.org/pub/infozip/src/zip{{ version.replace(".", "") }}.tgz
   sha256: {{ sha256 }}
+  patches:
+    0001-use-CC-env-variable-for-build.patch
 
 build:
   number: 0
   skip: True  # [win]
   script: make -f unix/Makefile generic && mv zip $PREFIX/bin
+
+requirements:
+  build:
+    - {{ compiler('c') }}
 
 test:
   commands:
