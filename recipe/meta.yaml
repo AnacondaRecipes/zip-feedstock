@@ -20,6 +20,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make  # [linux]
+    - patch  # [not win]
 
 test:
   commands:
