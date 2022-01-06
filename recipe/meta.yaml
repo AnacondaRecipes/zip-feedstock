@@ -28,11 +28,12 @@ test:
 
 about:
   home: http://www.info-zip.org/
-  # http://infozip.sourceforge.net/license.html
-  license: BSD-like
+  # see http://infozip.sourceforge.net/license.html
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: simple program for unzipping files
+  doc_url: http://infozip.sourceforge.net/
 
 extra:
   recipe-maintainers:
