@@ -12,7 +12,7 @@ source:
     0001-use-CC-env-variable-for-build.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   script: make -f unix/Makefile generic && mkdir ${PREFIX}/bin && mv zip ${PREFIX}/bin
 
@@ -20,6 +20,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make  # [linux]
+    - patch  # [not win]
 
 test:
   commands:
@@ -27,9 +28,12 @@ test:
 
 about:
   home: http://www.info-zip.org/
-  license: BSD-like
+  # see http://infozip.sourceforge.net/license.html
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
   summary: simple program for unzipping files
+  doc_url: http://infozip.sourceforge.net/
 
 extra:
   recipe-maintainers:
